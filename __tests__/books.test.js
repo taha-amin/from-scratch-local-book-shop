@@ -35,10 +35,17 @@ describe('books routes', () => {
     ]);
   });
 
-  it.skip('should return book detail', async () => {
+  it('should return book detail for first book', async () => {
     const res = await request(app).get('/books/1');
-    const bookOne = { id: '1', title: 'Lord of the Things', released: 1922 };
-    expect(res.body).toEqual(bookOne);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({
+      id: '1',
+      title: 'Lord of the Things',
+      released: 1922,
+      authors: [
+        { id: 1, name: 'Arthur McArthur', dob: 1959, pob: 'Orange County' },
+      ],
+    });
   });
 
   afterAll(() => {

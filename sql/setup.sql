@@ -1,7 +1,8 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
-DROP TABLE IF EXISTS books;
-DROP TABLE IF EXISTS authors;
+DROP TABLE IF EXISTS books CASCADE;
+DROP TABLE IF EXISTS authors CASCADE;
+DROP TABLE IF EXISTS books_authors CASCADE;
 
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -34,3 +35,14 @@ VALUES
     ('Arthur McArthur', 1959, 'Orange County'),
     ('Test McTest', 1960, 'New York'),
     ('Another McTest', 1890, 'Miami');
+
+CREATE TABLE books_authors(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    books_id BIGINT,
+    authors_id BIGINT
+);
+
+INSERT INTO books_authors (books_id, authors_id) VALUES
+    (1, 1),
+    (2, 2),
+    (3, 3);
