@@ -20,8 +20,8 @@ CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name VARCHAR(280) NOT NULL,
     dob INT NOT NULL,
-    pob VARCHAR(280) NOT NULL,
-)
+    pob VARCHAR(280) NOT NULL
+);
 
 INSERT INTO authors (
     name,
