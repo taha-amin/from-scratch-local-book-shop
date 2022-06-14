@@ -14,7 +14,9 @@ INSERT INTO books (
     released
 )
 VALUES
-    ('Lord of the Things', 1922);
+    ('Lord of the Things', 1922),
+    ('Of Mice and Men', 1999),
+    ('Harry Potter', 2000);
 
 CREATE TABLE authors (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
@@ -29,4 +31,6 @@ INSERT INTO authors (
     pob
 )
 VALUES
-    ('Arthur McArthur', 1959, 'Orange County');
+    ('Arthur McArthur', 1959, 'Orange County'),
+    ('Test McTest', 1960, 'New York'),
+    ('Another McTest', 1890, 'Miami');
