@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS books;
 CREATE TABLE books (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     title VARCHAR(280) NOT NULL,
-    released NOT NULL
+    released INT NOT NULL
 );
 
 INSERT INTO books (
@@ -13,4 +13,4 @@ INSERT INTO books (
     released
 )
 VALUES
-    ('Lord of the Things', 1922)
+    ('Lord of the Things', 1922);
