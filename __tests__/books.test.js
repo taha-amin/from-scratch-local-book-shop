@@ -15,7 +15,7 @@ describe('books routes', () => {
 
   it('should return book detail', async () => {
     const res = await request(app).get('/books/1');
-    const bookOne = [{ id: '1', title: 'Lord of the Things', released: 1922 }];
+    const bookOne = { id: '1', title: 'Lord of the Things', released: 1922 };
     expect(res.body).toEqual(bookOne);
   });
 
