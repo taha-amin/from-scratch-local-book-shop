@@ -48,6 +48,14 @@ describe('books routes', () => {
     });
   });
 
+  it('should be able to create new book', async () => {
+    const res = await request(app)
+      .post('/books')
+      .send({ title: 'Hugo', released: 2022 });
+    expect(res.status).toBe(200);
+    expect(res.body.title).toBe('Hugo');
+  });
+
   afterAll(() => {
     pool.end();
   });
