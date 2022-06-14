@@ -13,6 +13,12 @@ describe('books routes', () => {
     expect(res.body.length).toEqual(1);
   });
 
+  it('should return book detail', async () => {
+    const res = await request(app).get('/books/1');
+    const bookOne = [{ id: '1', title: 'Lord of the Things', released: 1922 }];
+    expect(res.body).toEqual(bookOne);
+  });
+
   afterAll(() => {
     pool.end();
   });
